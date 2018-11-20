@@ -4,12 +4,22 @@
 	
     	<div class="page-title">
     		{{ .Title }}
-    		<div class="meta">    			
+    		<div class="meta">    		
+				
                 By <a href="{{ .Site.Params.author }}" rel="author">{{ .Site.Params.author }}</a>,             
     			<time class="timeago" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>,
     			<a href="{{ .Permalink }}#comments">
                 评论</a><i class="iconfont icon-comment"></i>
+				
+				
+                {{ range .Params.tags }}
+					 <a class="float-right" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
+					   <i class="iconfont icon-Tag"></i>{{- . -}}&nbsp;
+					 </a>
+				{{ end }}
+							
     		</div>
+			
     	</div>
         <div class="page-content">
             {{ .Content }}
@@ -26,7 +36,7 @@
 					<ul>
 						<li>估计你也会喜欢:</li>
 						<ul>        
-							{{ range first 5 .Site.Pages }}
+							{{ range first 3 .Site.Pages }}
 							{{if eq .Type "post" }}
 							<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Date.Format "02 Jan, 2006" }}</li>
 							{{ end }}

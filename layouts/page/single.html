@@ -1,0 +1,18 @@
+{{ define "main" -}}
+<div class="col-md-12">
+    <div class="page">
+	
+    	<div class="page-title">
+    		{{ .Title }}
+    		
+    	</div>
+        <div class="page-content">
+            {{ .Content }}
+		</div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.13.1/styles/gml.min.css">
+<script src="https://cdn.staticfile.org/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+{{- end }}
