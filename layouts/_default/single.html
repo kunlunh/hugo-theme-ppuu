@@ -1,0 +1,45 @@
+{{ define "main" -}}
+<div class="col-md-12">
+    <div class="page">
+	
+    	<div class="page-title">
+    		{{ .Title }}
+    		<div class="meta">    			
+                By <a href="{{ .Site.Params.author }}" rel="author">{{ .Site.Params.author }}</a>,             
+    			<time class="timeago" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>,
+    			<a href="{{ .Permalink }}#comments">
+                评论</a><i class="iconfont icon-comment"></i>
+    		</div>
+    	</div>
+        <div class="page-content">
+            {{ .Content }}
+            <!-- Share & Comments -->
+               <div class="share">
+					<p>发布于:
+						<i>
+				<time >{{ .Date.Format "Monday 2006-01-02 15:04:05" }}</time>
+						</i>
+						<a class="float-right" href="http://service.weibo.com/share/share.php?url={{ .Permalink }}" target="_blank">
+							<i class="iconfont icon-share" style="color:red;"></i> 分享至微博
+						</a>
+					</p>
+					<ul>
+						<li>估计你也会喜欢:</li>
+						<ul>        
+							{{ range first 5 .Site.Pages }}
+							{{if eq .Type "post" }}
+							<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Date.Format "02 Jan, 2006" }}</li>
+							{{ end }}
+							{{ end }}   
+						</ul>
+					</ul>
+				</div>          
+        </div>
+		{{ partial "comment.html" . }}
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.13.1/styles/gml.min.css">
+<script src="https://cdn.staticfile.org/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+{{- end }}

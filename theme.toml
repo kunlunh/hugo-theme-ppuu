@@ -1,0 +1,12 @@
+name = "ppuu"
+license = "MIT"
+licenselink = "https://github.com/wo5/"
+description = "A bootstrap 4 hugo theme"
+tags = ["blog", "company"]
+features = ["blog", "themes", "hiplon"]
+min_version = 0.21
+	
+[author]
+    name = "HKL"
+    homepage = "https://jnuer.com"
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	{{ if .IsHome -}}
+	  <title>{{ .Site.Title }}</title>
+	  {{- else -}}
+	  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+	  {{- end }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ .Hugo.Generator }}
+	{{ $staticfile := "//cdn.staticfile.org/" }}
+    <meta name="keywords" content="">    
+    <link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="{{ $.Site.BaseURL }}css/main.css">
+	<link rel="stylesheet" href="{{ $staticfile }}twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://at.alicdn.com/t/font_1471502518_052932.css" rel="stylesheet">
+	<script src="{{ $staticfile }}jquery/3.3.1/jquery.min.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <main>
+		<span class="statusbar"></span>
+		<!-- Wrap all page content here -->
+		<div id="wrap">
+			<div id="body" class="container">
+				<div class="row row-offcanvas row-offcanvas-left">
+					<!-- side navigation -->
+					{{ block "navbar" . }}{{ partial "navbar.html" .}}{{ end }}
+					{{ block "site-header" . }}{{ partial "site-header.html" .}}{{ end }}
+					<div class="col-md-10">
+					{{ block "site-headnav" . }}{{ partial "site-headnav.html" .}}{{ end }}
+					{{ block "main" . }}{{ end }}
+					</div>
+				</div>
+			</div>
+			{{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
+		</div>
+    </main>
+    
+    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{{ define "main" -}}
+
+<div class="page">
+{{ range ( .Paginate (where .Data.Pages "Type" "post")).Pages }}
+	<div class="page-item col-md-12">			
+		<div class="row">
+			<div class="col-md-8">
+				<ul class="page-item-title">
+					<li><time class="timeago meta" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "2006-01-02" }}</time>
+					<li><a class="title" href="{{ .Permalink }}">{{ .Title }}</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 hide-on-phone float-right">
+				<ul class="page-item-title float-right meta">
+					<li><a href="{{ .Permalink }}#comments">
+						评论<i class="iconfont icon-comment"></i></a></li>
+					<li><a href="{{ .Permalink }}">全文 <i class="iconfont icon-ellipsis"></i></a></li>
+					<li><a class="pib-indicator">预览 <i class="iconfont icon-expand"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 page-item-body">
+				{{ .Summary }}
+				{{ if .Truncated }}
+				<p class="more"><a href="{{ .Permalink }}" title="{{ .Title }}">- 阅读剩余部分 -</a>
+				{{ end }}
+			</div>
+		</div>	
+	</div>
+{{- end }}	
+
+	{{ template "_internal/pagination.html" . }}
+
+
+</div>
+{{- end }}
