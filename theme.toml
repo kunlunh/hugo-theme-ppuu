@@ -1,6 +1,6 @@
 name = "ppuu"
 license = "MIT"
-licenselink = "https://github.com/wo5/"
+licenselink = "https://github.com/wo5/hugo-theme-ppuu/blob/master/LICENSE"
 description = "A bootstrap 4 hugo theme"
 tags = ["blog", "company"]
 features = ["blog", "themes", "hiplon"]
