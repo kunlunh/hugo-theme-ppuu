@@ -11,13 +11,13 @@
     			<a href="{{ .Permalink }}#comments">
                 评论</a><i class="iconfont icon-comment"></i>
 				
-				
+				<p> 
                 {{ range .Params.tags }}
-					 <a class="float-right" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
+					 <a  href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
 					   <i class="iconfont icon-Tag"></i>{{- . -}}&nbsp;
 					 </a>
 				{{ end }}
-							
+				</p>			
     		</div>
 			
     	</div>
