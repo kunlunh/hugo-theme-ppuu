@@ -35,7 +35,7 @@ function isTop() {
   else
     $(".goto-top").fadeOut("slow");
 }
-          $(document).ready(function() {
+  $(document).ready(function() {
     $('.menu-btn').click(function() {
         $('.row-offcanvas').toggleClass('active');
     });
@@ -43,8 +43,15 @@ function isTop() {
         $('.row-offcanvas').toggleClass('active');
     });
 });
-          jQuery(document).ready(function() {
-    jQuery("time.timeago").timeago();
+   timeago().render($('time.timeago'),'zh_CN');
+
+</script>
+
+<script>
+$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 });
 
 </script>
@@ -62,3 +69,4 @@ $(document).ready(function() {
     });
 });
 </script>
+
