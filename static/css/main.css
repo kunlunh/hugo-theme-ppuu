@@ -96,6 +96,9 @@ main{
 .comments{
 	border-top:2px solid #000
 }
+.vcomments{
+	border-top:2px solid #000
+}
 .share{
 	margin-top:60px;
 	background:#F3F8FF;
@@ -513,6 +516,11 @@ pre{
 	padding-left:5px;
 }
 #comments{
+	padding-top:25px;
+	padding-left:5px;
+	border-top:2px solid #000;
+}
+#vcomments{
 	padding-top:25px;
 	padding-left:5px;
 	border-top:2px solid #000;
