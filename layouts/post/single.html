@@ -6,7 +6,7 @@
     		{{ .Title }}
     		<div class="meta">    		
 				
-                By <a href="{{ .Site.Params.author }}" rel="author">{{ .Site.Params.author }}</a>,             
+                By <a href="{{ $.Site.BaseURL }}about/" rel="author">{{ .Site.Params.author }}</a>,             
     			<time class="timeago" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>,
     			<a href="{{ .Permalink }}#comments">
                 评论</a><i class="iconfont icon-comment"></i>

@@ -16,19 +16,15 @@ else
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-		console.log('xml');
 	var count = 0;
 	html = '<table class="table table-bordered"><thead><tr><th scope="col" class="mb-2">#</th><th scope="col" class="mb-2">标题</th><th scope="col" class="mb-5">链接</th></tr></thead><tbody>';
-	//var keyword = $('#keyword').val().toLowerCase();
-	var keyword = document.querySelector('#keyword').value.toLowerCase();
+	var keyword = document.getElementById('keyword').value.toLowerCase();
 	if (keyword == ""){
 			html = '<h2>No Input!</h2>';
 	}else{
 		x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
 		for (i=0;i<x.length;i++)
 		{
-	      //var judge = x[i].getElementsByTagName("title").toLowerCase();
-		  //var key = x[i].getElementsByTagName("title");
 		  xx=x[i].getElementsByTagName("title");
 		  {
 			try
@@ -39,7 +35,7 @@ else
 			  }
 			catch (er)
 			  {
-				console.log(er);  
+			  console.log(er);  
 			  continue;
 			  }
 			}
@@ -47,7 +43,7 @@ else
 			  html += '<tr><th scope="row">' + count + '</th><td>' + key + '</td><td><a href="' + posturl + '">' + posturl + '</a></td></tr>';
 			  count = count + 1;
 		     }
-		  }
+		}
 			html += '</tbody></table>';
 			if(count == 0){
 				html = '<h2>Not Found!</h2>'

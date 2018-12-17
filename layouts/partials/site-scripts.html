@@ -1,49 +1,66 @@
 <script>
-    $(document).ready(function() {
-    var timer;
-
-    $(window).bind('scroll', (function() {
+ timeago().render(document.getElementsByClassName('timeago'),'zh_CN');
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+    document.getElementsByClassName('menu-btn')[0].addEventListener("click", function() {
+		document.getElementsByClassName('row-offcanvas')[0].classList.toggle('active');
+	});
+    document.getElementsByClassName('close-btn')[0].addEventListener("click", function() {
+		document.getElementsByClassName('row-offcanvas')[0].classList.toggle('active');
+	});
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var timer;
+  $(window).bind('scroll', (function() {
         clearTimeout(timer);
         timer = setTimeout(getPercent, 5);
         isTop();
     }));
-
-    $(".goto-top-link").click(function(){
+	$(".goto-top-link").click(function(){
         event.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
+  
 });
 
+
 function scrollPossition() {
-    return ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
+	var window_scrollTop =   (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    const body = document.body;
+	const html = document.documentElement;
+	var document_height = Math.max(
+	  body.offsetHeight,
+	  body.scrollHeight,
+	  html.clientHeight,
+	  html.offsetHeight,
+	  html.scrollHeight
+	);
+	var window_height = window.innerHeight;
+	return ( window_scrollTop / ( document_height - window_height )) * 100;
 }
 
 function getPercent() {
-    $(".statusbar").css("width", String(scrollPossition()) + "%");
-
+	document.getElementsByClassName('statusbar')[0].style.width = String(scrollPossition()) + "%";
     if (scrollPossition() > 97) {
-        $(".statusbar").css("background-color", "#1ca265");
+        document.getElementsByClassName('statusbar')[0].style.background = "#1ca265" ;	
     } else {
-        $(".statusbar").css("background-color", "#eb5e29");
+        document.getElementsByClassName('statusbar')[0].style.background = "#eb5e29" ;
     }
     return;
 }
 
 function isTop() {
-  if(scrollPossition() > 30)
-    $(".goto-top").fadeIn("slow");
-  else
-    $(".goto-top").fadeOut("slow");
+  if(scrollPossition() > 30) {
+    document.getElementsByClassName('goto-top')[0].style.transition = 'opacity 3s';
+	document.getElementsByClassName('goto-top')[0].style.opacity = '1';
+  }else{
+    document.getElementsByClassName('goto-top')[0].style.transition = 'opacity 3s';
+	document.getElementsByClassName('goto-top')[0].style.opacity = '0';
+  }
 }
-  $(document).ready(function() {
-    $('.menu-btn').click(function() {
-        $('.row-offcanvas').toggleClass('active');
-    });
-    $('.close-btn').click(function() {
-        $('.row-offcanvas').toggleClass('active');
-    });
-});
-   timeago().render($('time.timeago'),'zh_CN');
 
 </script>
 
