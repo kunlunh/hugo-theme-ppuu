@@ -1,0 +1,28 @@
+{{ define "main" -}}
+<div class="col-md-12">
+    <div class="page">
+		<h1 class="mt-2">搜索</h1>
+
+		
+		<form class="form-row" onsubmit="return false" action="##" method="post">
+
+		  <div class="form-group mx-sm-3 mb-2">
+			<label for="keyword" class="sr-only">关键字</label>
+			<input type="text" class="form-control" id="keyword" placeholder="请输入关键字">
+		  </div>
+		  <button id="tet" type="submit" class="btn btn-primary mb-2">搜索</button>
+		</form>
+		  
+		<h2 id="search"></h2>
+		<h4 id="notify" class="mt-2"></h4>
+		<div id="hide">
+			<h5><div id=result>?</div></h5>
+			
+			<h5><ul id="ul1"></ul></h5>
+		
+		</div>
+	</div>
+</div>
+<script src="//s1.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ $.Site.BaseURL }}js/search.js"></script>
+{{- end }}
