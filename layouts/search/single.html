@@ -10,7 +10,7 @@
 			<label for="keyword" class="sr-only">关键字</label>
 			<input type="text" class="form-control" id="keyword" placeholder="请输入关键字">
 		  </div>
-		  <button id="tet" type="submit" class="btn btn-primary mb-2">搜索</button>
+		  <button id="tet" type="submit" class="btn btn-primary mb-2" onclick="loadXMLDoc('../index.xml')">搜索</button>
 		</form>
 		  
 		<h2 id="search"></h2>
@@ -23,6 +23,5 @@
 		</div>
 	</div>
 </div>
-<script src="//s1.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{ $.Site.BaseURL }}js/search.js"></script>
 {{- end }}
