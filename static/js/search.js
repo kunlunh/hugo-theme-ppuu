@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function(event) { 
+	document.getElementById('tet').addEventListener("click", function() {
+			loadXMLDoc('../index.xml');
+	});
+});
 function loadXMLDoc(url)
 {
 	

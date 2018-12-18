@@ -14,18 +14,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 <script>
 document.addEventListener("DOMContentLoaded", function(event) { 
   var timer;
-  $(window).bind('scroll', (function() {
-        clearTimeout(timer);
-        timer = setTimeout(getPercent, 5);
-        isTop();
-    }));
-	$(".goto-top-link").click(function(){
-        event.preventDefault();
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-    });
-  
+	window.addEventListener("scroll",function(){
+		clearTimeout(timer);
+		timer = setTimeout(getPercent, 5);
+		isTop();
+	});
+	document.getElementsByClassName('goto-top')[0].addEventListener("click", function() {
+		window.scrollTo(0, 0);
+	});
 });
-
 
 function scrollPossition() {
 	var window_scrollTop =   (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -61,21 +58,8 @@ function isTop() {
 	document.getElementsByClassName('goto-top')[0].style.opacity = '0';
   }
 }
-
 </script>
 
 
-<script>
-$(document).ready(function() {
-    $(".page").children().first().find(".page-item-body").css( "display", "block" );
-    $(".page").children().first().find(".pib-indicator")
-        .find("i").toggleClass("iconfont icon-shrink").toggleClass("iconfont icon-expand");
 
-    $(".page-item .pib-indicator").click(function() {
-        var preview = $(this);
-        preview.find("i").toggleClass("iconfont icon-expand").toggleClass("iconfont icon-shrink");
-        $(this).closest(".page-item").find(".page-item-body").toggle("fast", function() {});
-    });
-});
-</script>
 
