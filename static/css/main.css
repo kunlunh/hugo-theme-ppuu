@@ -187,6 +187,7 @@ ul{
 	z-index:20
 }
 .goto-top{
+	display:none;
 	font-size:15px !important;
 	cursor:pointer;
 	margin:1px 0;

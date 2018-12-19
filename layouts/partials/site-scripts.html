@@ -49,13 +49,36 @@ function getPercent() {
     return;
 }
 
+function fadeOut(el){
+  el.style.opacity = 1;
+
+  (function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+      el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+};
+
+function fadeIn(el){
+  el.style.opacity = 0;
+  el.style.display = "block";
+
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += .1) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+};
+
 function isTop() {
-  if(scrollPossition() > 30) {
-    document.getElementsByClassName('goto-top')[0].style.transition = 'opacity 3s';
-	document.getElementsByClassName('goto-top')[0].style.opacity = '1';
-  }else{
-    document.getElementsByClassName('goto-top')[0].style.transition = 'opacity 3s';
-	document.getElementsByClassName('goto-top')[0].style.opacity = '0';
+  if(scrollPossition() > 30 && (document.getElementsByClassName('goto-top')[0].style.display != 'block')) {
+	fadeIn(document.getElementsByClassName('goto-top')[0]);
+  }else if(scrollPossition() <= 30 && (document.getElementsByClassName('goto-top')[0].style.display != 'none')){
+	fadeOut(document.getElementsByClassName('goto-top')[0]);
   }
 }
 </script>

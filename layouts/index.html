@@ -32,10 +32,20 @@
 {{- end }}	
 
 	{{ template "_internal/pagination.html" . }}
-
-
 </div>
 <script>
+	function closest(el, selector) {
+	  const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+
+	  while (el) {
+		if (matchesSelector.call(el, selector)) {
+		  return el;
+		} else {
+		  el = el.parentElement;
+		}
+	  }
+	  return null;
+	}
 	var superToggle = function(element, class0, class1) {
 	  element.classList.toggle(class0);
 	  element.classList.toggle(class1);
@@ -43,12 +53,13 @@
 	document.addEventListener("DOMContentLoaded", function(event) { 
 		var pib = document.getElementsByClassName('pib-indicator');
 		document.getElementsByClassName('page-item-body')[0].style.display = 'block';
-		superToggle(pib[0].querySelectorAll('i')[0],'icon-shrink', 'icon-expand');
+		superToggle(pib[0].getElementsByClassName('iconfont')[0],'icon-shrink', 'icon-expand');
 		var count = 0;
 		for (count ; count < pib.length; count++) {
 			pib[count].addEventListener("click", function() {
-				superToggle(this.querySelectorAll('i')[0],'icon-expand', 'icon-shrink');
-				var el = this.closest('.page-item').querySelectorAll('.page-item-body')[0];
+				superToggle(this.getElementsByClassName('iconfont')[0],'icon-expand', 'icon-shrink');
+				//var el = this.closest('.page-item').querySelectorAll('.page-item-body')[0];  //no ie support 
+				var el = closest(this,'.page-item').getElementsByClassName('page-item-body')[0];   //support ie10+
 				if (el.style.display === "none" || el.style.display == "") {
 					el.style.display = "block";
 				  } else {
@@ -56,7 +67,6 @@
 				  }	
 			});
 		}
-		//closest只支持非IE浏览器
 	});
 	</script>
 {{- end }}

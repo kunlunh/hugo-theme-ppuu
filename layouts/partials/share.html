@@ -1,0 +1,27 @@
+<div class="share">
+
+	<p>发布于:
+	<i>
+	<time >{{ .Date.Format "Monday 2006-01-02 15:04:05" }}</time></i>
+	<a class="float-right" href="http://service.weibo.com/share/share.php?url={{ .Permalink }}" target="_blank">
+		<i class="iconfont icon-share" style="color:red;"></i> 分享至微博
+	</a>
+	</p>
+	
+	<ul>
+	<li>估计你也会喜欢:</li>
+	<ul>        
+	{{ range first 3 .Site.Pages }}
+		{{if eq .Type "post" }}
+		<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Date.Format "02 Jan, 2006" }}</li>
+		{{ end }}
+	{{ end }}   
+	</ul>
+	
+	</ul>
+	<div class="text-center" id="artlicense">        
+	<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+	<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
+	本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。  
+	</div>
+</div>   
