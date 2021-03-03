@@ -1,7 +1,7 @@
 {{ define "main" -}}
 
 <div class="page">
-{{ range ( .Paginate (where .Data.Pages "Type" "post")).Pages }}
+{{ range ( .Paginate (where .Site.RegularPages "Type" "post")).Pages }}
 	<div class="page-item col-md-12">			
 		<div class="row">
 			<div class="col-md-8">
