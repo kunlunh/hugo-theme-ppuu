@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 	document.getElementById('tet').addEventListener("click", function() {
-			loadXMLDoc('../index.xml');
+			loadXMLDoc('../feed.xml');
 	});
 });
 function loadXMLDoc(url)
@@ -35,8 +35,11 @@ else
 			try
 			  {
 			  var judge = xx[0].firstChild.nodeValue.toLowerCase();
+
 			  var key = xx[0].firstChild.nodeValue;
+
 			  var posturl = x[i].getElementsByTagName("link")[0].firstChild.nodeValue;
+
 			  }
 			catch (er)
 			  {
@@ -57,7 +60,7 @@ else
 		}
 		document.getElementById('result').innerHTML=html;
 	}else{
-		document.getElementById('result').innerHTML='No connection';
+		document.getElementById('result').innerHTML='Searching';
 	}
   }
 xmlhttp.open("GET",url,true);

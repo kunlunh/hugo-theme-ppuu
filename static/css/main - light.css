@@ -6,12 +6,6 @@ body{
 .footer{
 	height:60px
 }
-
-a:hover{
-	color:#917d11 !important;
-}
-
-
 main{
 	position:relative
 }
@@ -28,15 +22,11 @@ main{
 	padding:7px 0 0
 }
 .page-item:hover{
-	background:#4C566A;
+	background:#F3F8FF;
 	border-radius:.5rem
 }
 .page-item:hover .meta,.page-item:hover .meta a{
-	color:#888ace
-}
-
-.meta a:hover{
-	color:#fff !important
+	color:#333
 }
 .page-item-title{
 	list-style:none;
@@ -54,13 +44,6 @@ main{
 .page-item-title .fa-expand{
 	color:#22D722
 }
-.page-item-title.float-right a{
-	color:#afafaf !important;
-	font-size:16px;
-}
-.page-item-title.float-right a:hover{
-	color:#fff !important
-}
 .page-item-body{
 	display:none
 }
@@ -74,9 +57,6 @@ main{
 	overflow:hidden;
 	padding:20px 0 0;
 	border-bottom:1px solid #eee;
-}
-.page-content a{
-	color:#5E81AC
 }
 .page-content img{
 	max-width: 100%;
@@ -113,10 +93,15 @@ main{
 	width:100%;
 	margin-top:-13rem
 }
-
+.comments{
+	border-top:2px solid #000
+}
+.vcomments{
+	border-top:2px solid #000
+}
 .share{
 	margin-top:60px;
-	background:#4C566A;
+	background:#F3F8FF;
 	padding:20px;
 	border-radius:.8rem
 }
@@ -155,10 +140,11 @@ main{
 	padding:0 !important
 }
 #nav .separator{
+	color:#333 !important;
 	font-weight:700 !important;
 	margin-bottom:1px;
 	margin-top:1px;
-	background:#1F1A24;
+	background:#F3F8FF;
 	padding:10px 0 10px 10px
 }
 .sidebar{
@@ -171,12 +157,12 @@ main{
 }
 .sidebar a:hover,.sidebar a:focus{
 	text-decoration:none;
-	color:#fff !important
+	color:#333
 }
 .sidebar li{
 	list-style-type:none;
 	display:block;
-	background:#4C566A;
+	background:#F3F8FF;
 	margin:0;
 	padding:5px 10px
 }
@@ -205,10 +191,10 @@ ul{
 	font-size:15px !important;
 	cursor:pointer;
 	margin:1px 0;
-	background:#1F1A24
+	background:#F3F8FF
 }
 .goto-top i{
-	color:#fff
+	color:#333
 }
 .goto-top:hover,.goto-top:focus,.goto-top:hover i{
 	color:red
@@ -219,33 +205,25 @@ ul{
 }
 .link:hover,.link:focus{
 	text-decoration:none;
-	color:#888ace
+	color:#333
 }
 #twitter-ic{
 	color:#55acee !important
 }
 #git-ic{
-	color:#fff !important
-}
-#git-ic:hover{
-	color:#888ace !important
+	color:#333 !important
 }
 #rss-ic{
 	color:#ff9933 !important
 }
-#rss-ic:hover{
-	color:#888ace !important
-}
 .top{
 	line-height:40px;
+	background-color:white;
 	font-weight:700 !important;
 	padding-left:15px
 }
 .top a{
-	color:#fff
-}
-.top a:hover{
-	color:#888ace !important;
+	color:#333
 }
 .top span a{
 	padding-left:3px
@@ -542,29 +520,68 @@ pre{
 	padding-left:5px;
 	border-top:2px solid #000;
 }
-.gt-container .gt-header-textarea:hover{
-	background-color:#343a40 !important
+#vcomments{
+	padding-top:25px;
+	padding-left:5px;
+	border-top:2px solid #000;
 }
-
-.gt-container .gt-header-textarea{
-	color:#f8f9fa !important;
-	background-color:#343a40 !important;
-	border:1px solid rgba(255,255,255,.1) !important
+.comment-list,.comment-list ol{
+	list-style:none;
+	margin:0;
+	padding:0;
 }
-.gt-btn-login{
-	background-color:#6c757d !important
+.comment-list li{
+	padding:14px;
+	margin-top:5px;
+	border:1px solid #EEE;
 }
-.gt-ico-text{
-	color: #5E81AC !important;
+.comment-list li.comment-level-odd{
+	background:#F6F6F3;
 }
-.gt-link-counts{
-	color: #5E81AC !important;
+.comment-list li.comment-level-even{
+	background:#FFF;
 }
-.gt-svg{
-	fill: #fff !important;
+.comment-list li.comment-by-author{
+	background:#FFF9E8;
 }
-.gt-popup{
-	background-color:#6f7777 !important
+.comment-list li .comment-reply{
+	text-align:right;
+	font-size:.92857em;
+}
+.comment-meta a{
+	color:#999;
+	font-size:.92857em;
+}
+.comment-author{
+	display:block;
+	margin-bottom:3px;
+	color:#444;
+}
+.comment-author .avatar{
+	float:left;
+	margin-right:10px;
+}
+.comment-author cite{
+	font-weight:bold;
+	font-style:normal;
+}
+.comment-list .respond{
+	margin-top:15px;
+	border-top:1px solid #EEE;
+}
+.respond .cancel-comment-reply{
+	float:right;
+	margin-top:15px;
+	font-size:.92857em;
+}
+#comment-form label{
+	display:block;
+	margin-bottom:.5em;
+	font-weight:bold;
+}
+#comment-form .required:after{
+	content:" *";
+	color:#C00;
 }
 .pagination{
 	list-style:none;
@@ -581,40 +598,12 @@ pre{
 	padding:0 10px;
 	height:30px;
 	line-height:30px;
-	color:#ddd;
 }
 .pagination a:hover{
-	background:#4b4b4b;
+	background:#EEE;
 	text-decoration:none;
 }
 .pagination .active a{
 	color:#444;
 	background:#EEE;
 }
-
-.page-item a {
-  color: #5E81AC;
-  text-decoration: none;
-}
-
-.table {
-	color:#fff !important;
-}
-
-.post a{
-	color:#5E81AC;
-}
-
-.pagination .page-item.active .page-link{
-	background-color:#4b4b4b !important;
-	border-color:#444 !important;
-}
-
-.pagination .page-item .page-link{
-	background-color:#343a40 !important;
-	border-color:#444 !important;
-}
-.pagination .page-item a{
-	color: #dee2e6 !important;
-}
-

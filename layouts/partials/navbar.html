@@ -1,5 +1,5 @@
 <nav id="nav" role="navigation" class="col-md-2 sidebar-offcanvas">
-    <header id="menu" role="banner">
+    <header id="menu" role="banner" class="bg-dark">
 		<p class="menu-title">Close</p>
 		<a href="#nav" class="close-btn">
         <img src="{{ $.Site.BaseURL }}img/close-btn.svg" alt="close button"></a>
@@ -7,19 +7,19 @@
     <ul class="sidebar" >
 <!-- sort in alphebetical order -->
 		<li class="separator">导航</li>
-		<li><a href="{{ $.Site.BaseURL }}">主页</a></li>
-		<li><a href="{{ $.Site.BaseURL }}about/">联系方式</a></li>
-		<li><a href="{{ $.Site.BaseURL }}search/">搜索</a></li>
-		<li><a href="{{ $.Site.BaseURL }}tags/">标签</a></li>
-		<li><a href="https://jnuer.com">JNUER</a></li>
+		<li><a class="text-light" href="{{ $.Site.BaseURL }}">主页</a></li>
+		<li><a class="text-light" href="{{ $.Site.BaseURL }}contact/">联系方式</a></li>
+		<li><a class="text-light" href="{{ $.Site.BaseURL }}search/">搜索</a></li>
+		<li><a class="text-light" href="{{ $.Site.BaseURL }}tags/">标签</a></li>
+		<li><a class="text-light" href="https://jnuer.com">JNUER</a></li>
 		<a class="goto-top-link hide-on-phone" href="#top">
 		<div class="goto-top text-center">
-			<i class="iconfont icon-iconup"></i>
+			<i class="fa fa-caret-up"></i>
 		</div>
 		</a>
 	</ul>
  </nav>
- <header id="menu" role="banner">
+ <header id="menu" role="banner" class="bg-dark">
     <p class="menu-title">Menu</p>
     <a href="#nav" class="menu-btn">
 		<img src="{{ $.Site.BaseURL }}img/menu-btn.svg" alt="menu button">

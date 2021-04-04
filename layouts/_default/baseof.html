@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	{{ if .IsHome -}}
-	  <title>{{ .Site.Title }}</title>
-	  {{- else -}}
-	  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-	  {{- end }}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ .Hugo.Generator }}
-
-    <meta name="keywords" content="">    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-	<link rel="stylesheet" href="{{ $.Site.BaseURL }}css/main.css">
-	<link href="//lib.sinaapp.com/js/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="//at.alicdn.com/t/font_135978_xet94nt47pm.css" rel="stylesheet">
-	
-  </head>
-
-  <body>
-    <main>
+{{ block "header" . }}{{ partial "head.html" .}}{{ end }}
+  <body class="bg-dark">
+    <main class="text-white bg-dark">
 		<span class="statusbar"></span>
 		<!-- Wrap all page content here -->
 		<div id="wrap">
