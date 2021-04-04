@@ -27,10 +27,11 @@ main{
 	border-bottom:1px solid #eee;
 	padding:7px 0 0
 }
-.page-item:hover{
+.post-list:hover{
 	background:#4C566A;
-	border-radius:.5rem
+	border-radius:.4rem
 }
+
 .page-item:hover .meta,.page-item:hover .meta a{
 	color:#888ace
 }
@@ -613,7 +614,21 @@ pre{
 .pagination .page-item .page-link{
 	background-color:#343a40 !important;
 	border-color:#444 !important;
+	border-radius:.6rem
 }
+
+
+.pagination .page-link:hover{
+	background:#4b4b4b !important;
+	border-radius:.6rem
+}
+
+.page-link:focus {
+    z-index: 1 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #4b4b4b !important;
+}
+
 .pagination .page-item a{
 	color: #dee2e6 !important;
 }

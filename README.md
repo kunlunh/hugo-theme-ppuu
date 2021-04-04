@@ -17,9 +17,9 @@
     │   ├── page-1.md
     │   └── page-2.md
     └── post
-	│   ├── post1.md
-	│   ├── post2.md
+    │   ├── post1.md
+    │   ├── post2.md
     │   └── post3.md
-	└── search
-        └──  index.md # 
+    └── search
+         └──  index.md # 
 ```
