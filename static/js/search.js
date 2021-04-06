@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 	document.getElementById('tet').addEventListener("click", function() {
-			loadXMLDoc('../feed.xml');
+			loadXMLDoc('../index.xml');
 	});
 });
 function loadXMLDoc(url)
