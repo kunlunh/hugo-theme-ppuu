@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![IMG](https://github.com/wo5/hugo-theme-ppuu/raw/master/images/screenshot.png)
+![IMG](https://github.com/hiplon/hugo-theme-ppuu/blob/master/static/screenshot.png?raw=true)
 
 
 ## Demo https://ppuu.org
