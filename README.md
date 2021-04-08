@@ -2,7 +2,8 @@
 
 ## Screenshot
 
-![IMG](https://github.com/wo5/hugo-theme-ppuu/raw/master/images/screenshot.png)
+![IMG](https://github.com/hiplon/hugo-theme-ppuu/blob/master/static/screenshot.png?raw=true)
+
 
 
 ## Demo https://ppuu.org
@@ -17,9 +18,9 @@
     │   ├── page-1.md
     │   └── page-2.md
     └── post
-	│   ├── post1.md
-	│   ├── post2.md
+    │   ├── post1.md
+    │   ├── post2.md
     │   └── post3.md
-	└── search
-        └──  index.md # 
+    └── search
+         └──  index.md # 
 ```
