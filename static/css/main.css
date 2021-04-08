@@ -7,10 +7,25 @@ body{
 	height:60px
 }
 
-a:hover{
-	color:#917d11 !important;
+.vssue-header{
+	color:#EEE;
 }
 
+.vssue-new-comment-input{
+	color: #4C566A;
+}
+
+.vssue-new-comment-input:disabled{
+	background-color: #24292e !important;
+}
+
+a:hover{
+	color:#9a97f3 !important;
+}
+
+.posts a{
+	color:#ddd;
+}
 
 main{
 	position:relative
@@ -77,7 +92,7 @@ main{
 	border-bottom:1px solid #eee;
 }
 .page-content a{
-	color:#5E81AC
+	color:#c5c3f8;
 }
 .page-content img{
 	max-width: 100%;

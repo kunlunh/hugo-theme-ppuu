@@ -210,10 +210,6 @@
   line-height: inherit;
 }
 
-.page-content a {
-  color: #5E81AC;
-  text-decoration: none;
-}
 
 .page-content a:hover {
   text-decoration: underline;

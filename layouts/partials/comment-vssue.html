@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+
+<div id="comments">
+	<div id="vssue-container">
+	</div>
+<script>
+	new Vue({
+		el: '#vssue-container',
+	
+		render: h => h('Vssue', {
+			props: {
+			  // here set the title of issue of current page
+			  title: 'Vssue Dev',
+	
+			  // here set the options for your OAuth App
+			  options: {
+				owner: 'hiplon',
+				repo: 'vssue',
+				clientId: '4f2f1b2a556a1150ed74',
+				clientSecret: 'bd6d10100f4269c1ee03385d4771cd0d7405d2e5 ', // only required for some of the platforms
+			},
+		}
+		})
+	})
+</script>
+        
+</div>
